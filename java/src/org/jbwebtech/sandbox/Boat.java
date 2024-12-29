@@ -25,15 +25,15 @@ public record Boat(String name, int horsepower, double lengthInches) {
         if (that == null || this.getClass() != that.getClass()) {
             return false;
         }
-        
+
         Boat boat = (Boat) that;
-        
+
         if (this == that) {
             return true;
         }
 
-        return (Objects.equals(this.name, boat.name) 
-                && this.horsepower == boat.horsepower 
+        return (Objects.equals(this.name, boat.name)
+                && this.horsepower == boat.horsepower
                 && Double.compare(this.lengthInches, boat.lengthInches) == 0);
     }
 }
