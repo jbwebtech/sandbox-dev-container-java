@@ -1,5 +1,3 @@
-package org.jbwebtech.sandbox;
-
 import java.util.Objects;
 
 public record Boat(String name, int horsepower, double lengthInches) {
@@ -21,19 +19,19 @@ public record Boat(String name, int horsepower, double lengthInches) {
     }
 
     @Override
-    public final boolean equals(Object that) {
-        if (that == null || this.getClass() != that.getClass()) {
+    public final boolean equals(Object o) {
+        if (o == null || this.getClass() != o.getClass()) {
             return false;
         }
 
-        Boat boat = (Boat) that;
+        Boat that = (Boat) o;
 
         if (this == that) {
             return true;
         }
 
-        return (Objects.equals(this.name, boat.name)
-                && this.horsepower == boat.horsepower
-                && Double.compare(this.lengthInches, boat.lengthInches) == 0);
+        return (Objects.equals(this.name, that.name)
+                && this.horsepower == that.horsepower
+                && Double.compare(this.lengthInches, that.lengthInches) == 0);
     }
 }

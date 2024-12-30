@@ -1,15 +1,13 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/java
 {
-	"name": "Java 21 Dev Container Sandbox",
+	"name": "Java Dev Container Sandbox",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/java:1-21-bookworm",
 
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
-			"version": "21",
-			"installMaven": "true",
-			"installGradle": "true"
+			"version": "21"
 		}
 	}
 

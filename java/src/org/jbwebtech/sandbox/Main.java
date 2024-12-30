@@ -1,5 +1,3 @@
-package org.jbwebtech.sandbox;
-
 public class Main {
     public static void main(String[] args) {
         var boat = new Boat("Lucky", 800, 240.781);
