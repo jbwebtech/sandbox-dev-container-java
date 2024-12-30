@@ -50,11 +50,10 @@ Created Boat: Lucky
 Boat[name=Lucky, horsepower=800, lengthInches=240.781]
 Created Boat: Drifter
 Boat[name=Drifter, horsepower=1200, lengthInches=319.0]
-Equal reference b1 = b2? true
 Created Boat: Lightning
+Boat[name=Lightning, horsepower=2000, lengthInches=400.0]
 Created Boat: Lightning
-Equal value b1 & b2? true
-Equal value b3 & b4? true
+Boat[name=Lightning, horsepower=2000, lengthInches=400.0]
 ```
 
 ## Switching Java Versions
@@ -83,41 +82,9 @@ The compilation errors highlight the fact Java 8 is installed in the development
 The `Boat` class demonstrates the use of Java 21 records, which provide a compact syntax for declaring classes that are transparent holders for shallowly immutable data.  Importantly, records are not available in Java 8.
 
 ```java
-import java.util.Objects;
-
 public record Boat(String name, int horsepower, double lengthInches) {
     public Boat {
-        if (Objects.isNull(name) || name.isBlank()) {
-            throw new IllegalArgumentException("Name cannot be null or empty");
-        }
-
-        if (horsepower <= 0 || lengthInches <= 0) {
-            throw new IllegalArgumentException("Horsepower and Length must be greater than 0");
-        }
-
         System.out.println("Created Boat: " + name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, horsepower, lengthInches);
-    }
-
-    @Override
-    public final boolean equals(Object o) {
-        if (o == null || this.getClass() != o.getClass()) {
-            return false;
-        }
-
-        Boat that = (Boat) o;
-
-        if (this == that) {
-            return true;
-        }
-
-        return (Objects.equals(this.name, that.name)
-                && this.horsepower == that.horsepower
-                && Double.compare(this.lengthInches, that.lengthInches) == 0);
     }
 }
 ```
@@ -127,23 +94,20 @@ The `Main` class demonstrates the use of the `var` keyword, which allows for loc
 ```java
 public class Main {
     public static void main(String[] args) {
-        var boat = new Boat("Lucky", 800, 240.781);
-        System.out.println(boat);
-        boat = new Boat("Drifter", 1200, 319);
-        System.out.println(boat);
+        final var b1 = new Boat("Lucky", 800, 240.781);
+        System.out.println(b1);
 
-        final var b1 = boat;
-        final var b2 = boat;
+        final var b2 = new Boat("Drifter", 1200, 319);
+        System.out.println(b2);
 
-        System.out.println("Equal reference b1 = b2? " + (b1 == b2));
+        final var b3 = new Boat("Lightning", 2000, 400);
+        System.out.println(b3);
 
-        Boat b3 = new Boat("Lightning", 2000, 400);
-        Boat b4 = new Boat(b3.name(), b3.horsepower(), b3.lengthInches());
-
-        System.out.println("Equal value b1 & b2? " + (b1.equals(b2)));
-        System.out.println("Equal value b3 & b4? " + (b3.equals(b4)));
-    }
+        final var b4 = new Boat(b3.name(), b3.horsepower(), b3.lengthInches());
+        System.out.println(b4);
+      }
 }
+
 ```
 
 ## Conclusion
