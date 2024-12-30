@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository is designed to showcase the advantages and flexability of using Dev Containers through the lens of Java 21 language features. It provides a sandbox environment where developers can switch between a development environment for Java 21 and Java 8. This helps in catching potential issues with code written in Java 21 that may not be supported in Java 8.
+This repository is designed to showcase the advantages and flexibility of using Dev Containers through the lens of Java 21 language features. It provides a sandbox environment where developers can switch between a development environment for Java 21 and Java 8. This helps in catching potential issues with code written in Java 21 that may not be supported in Java 8.
 
 ## Prerequisites
 
@@ -75,6 +75,8 @@ Reverify the Java version installed in the environment by entering `java --versi
 
 The compilation errors highlight the fact Java 8 is installed in the development environment, thus providing a reproducible development environment that can be shared across teams, CI/CD pipelines, and production systems through source control.
 
+  Note: checkout the `java-8` branch for a working example where the `Main` and `Boat` classes have been refactored to Java 8 compatibility.
+
 ## Example Code
 
 ### Java 21 Features
@@ -112,4 +114,4 @@ public class Main {
 
 ## Conclusion
 
-This sandbox repository provides a practical example of using Dev Containers to ensure a consistent and reproducable development environment, regardless of the local JDK installed on the developer's workstation.
+This sandbox repository provides a practical example of using Dev Containers to ensure a consistent and reproducible development environment, regardless of the local JDK installed on the developer's workstation.
