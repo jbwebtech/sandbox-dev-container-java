@@ -11,23 +11,20 @@ This repository is designed to showcase the advantages and flexibility of using 
 
 ## Getting Started
 
-1. Clone the repository:
+1. Clone and open the repository in Visual Studio Code:
     ```sh
     git clone https://github.com/jbwebtech/sandbox-dev-container-java.git
     cd sandbox-dev-container-java
-    ```
-
-2. Open the repository in Visual Studio Code:
-    ```sh
     code .
     ```
 
-3. When prompted, reopen the repository in the Dev Container.
-    * Note: this may take a few minutes to pull and build all docker images before starting. Open the log to view progress if you like.
+2. When prompted, reopen the repository in the Dev Container.
+    * If not automatically prompted, select **Dev Containers: Open Folder in Container** from the Command Palette.
+    * Note: it may take a few minutes to pull and build the docker images before starting. Open the log to view progress if you like.
 
 ## Dev Container Configuration
 
-The Dev Container is configured using the `devcontainer.json` file located in the `.devcontainer` directory. This configuration sets up a development environment with Java 21 installed.
+The Dev Container is configured using the `devcontainer.json` file located in the `.devcontainer` directory, which should be committed to source control. The sample configuration below sets up a development environment with Java 21 installed.
 
 ```jsonc
 {
