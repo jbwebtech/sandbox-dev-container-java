@@ -112,3 +112,10 @@ public class Main {
 ## Conclusion
 
 This sandbox repository provides a practical example of using Dev Containers to ensure a consistent and reproducible development environment, regardless of the local JDK installed on the developer's workstation.
+
+
+## Resources
+
+* [Developing inside a Container](https://code.visualstudio.com/docs/devcontainers/containers)
+* [Development Containers](https://containers.dev/)
+* [Dev Containers CLI](https://containers.dev/supporting#devcontainer-cli)
