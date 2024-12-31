@@ -119,3 +119,4 @@ This sandbox repository provides a practical example of using Dev Containers to 
 * [Developing inside a Container](https://code.visualstudio.com/docs/devcontainers/containers)
 * [Development Containers](https://containers.dev/)
 * [Dev Containers CLI](https://containers.dev/supporting#devcontainer-cli)
+* [Dev Containers VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
